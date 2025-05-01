@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5002';
+const API_URL = import.meta.env.VITE_API_URL || 'https://wifi-qr-code-backend.vercel.app';
 
 export interface WiFiQRCode {
   id: string;

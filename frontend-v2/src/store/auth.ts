@@ -16,7 +16,7 @@ interface AuthState {
   logout: () => void;
 }
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5002';
+const API_URL = import.meta.env.VITE_API_URL || 'https://wifi-qr-code-backend.vercel.app';
 
 export const useAuthStore = create<AuthState>()(
   persist(
