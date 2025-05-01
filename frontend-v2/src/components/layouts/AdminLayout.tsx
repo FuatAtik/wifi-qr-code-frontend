@@ -3,7 +3,7 @@ import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Wifi, Home, QrCode, PlusCircle, LogOut, Menu, X, 
-  Bell, User 
+  Bell 
 } from 'lucide-react';
 import { useAuthStore } from '../../store/auth';
 

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { 
   PlusCircle, QrCode, Users, Clock, Wifi, 
-  ShieldCheck, BarChart3, TrendingUp 
+  ShieldCheck, TrendingUp 
 } from 'lucide-react';
 import { useQRCodeStore } from '../store/qrcode';
 
@@ -101,7 +101,7 @@ const Dashboard: React.FC = () => {
           <div>
             <p className="text-slate-600 text-sm">Secure Networks</p>
             <h3 className="text-2xl font-bold text-slate-900">
-              {qrCodes.filter(qr => qr.encryption !== 'nopass').length}
+              {qrCodes.filter(qr => qr.securityType !== 'nopass').length}
             </h3>
           </div>
         </div>
@@ -172,18 +172,18 @@ const Dashboard: React.FC = () => {
                     <td className="px-4 py-3 text-sm text-slate-800 font-medium">
                       <div className="flex items-center gap-3">
                         <Wifi className="h-4 w-4 text-cyan-500" />
-                        {qrCode.name}
+                        {qrCode.label}
                       </div>
                     </td>
                     <td className="px-4 py-3 text-sm text-slate-700">{qrCode.ssid}</td>
                     <td className="px-4 py-3 text-sm">
                       <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium
-                        ${qrCode.encryption === 'WPA' ? 'bg-green-100 text-green-700' : 
-                          qrCode.encryption === 'WEP' ? 'bg-amber-100 text-amber-700' : 
+                        ${qrCode.securityType === 'WPA' ? 'bg-green-100 text-green-700' : 
+                          qrCode.securityType === 'WEP' ? 'bg-amber-100 text-amber-700' : 
                           'bg-red-100 text-red-700'}`}
                       >
                         <ShieldCheck className="h-3 w-3" />
-                        {qrCode.encryption}
+                        {qrCode.securityType}
                       </span>
                     </td>
                     <td className="px-4 py-3 text-sm text-slate-600">

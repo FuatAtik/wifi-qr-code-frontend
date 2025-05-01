@@ -6,7 +6,7 @@ import {
   QrCode, ArrowLeft, Download, RefreshCw
 } from 'lucide-react';
 import { QRCodeCanvas } from 'qrcode.react';
-import { useQRCodeStore, WiFiQRCode } from '../store/qrcode';
+import { useQRCodeStore } from '../store/qrcode';
 
 const CreateQRCode: React.FC = () => {
   const navigate = useNavigate();
